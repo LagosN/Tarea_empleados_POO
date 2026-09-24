@@ -39,7 +39,13 @@ public class Gerente extends Empleado implements Bonificable {
 
     @Override
     public double calcularBonificacion() {
-        return 0;
+        double bono;
+            bono = bonificacionAnual * getSalarioBase();
+
+            return  bono;
+
+
+
     }
 
     @Override
@@ -50,17 +56,14 @@ public class Gerente extends Empleado implements Bonificable {
 
     @Override
     public double calcularSalario() {
-        double sueldo;
+        double bono;
         if (metaAnual >= 100.0){
-            bonificacionAnual = getSalarioBase() * 0.2;
-            sueldo = getSalarioBase() + bonificacionAnual;
-            return  sueldo;
+            bonificacionAnual =  0.2;
 
-
+            return  bonificacionAnual;
         }
-
-        sueldo = getSalarioBase();
-        return sueldo;
+        bonificacionAnual = 0;
+        return bonificacionAnual;
     }
 
     @Override
